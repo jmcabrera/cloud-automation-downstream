@@ -1,0 +1,19 @@
+name: "mirror Cloud-Automation"
+
+on:
+  workflow_dispatch:
+#  schedule:
+#    - cron: '*/5 * * * *'
+
+jobs:
+  mirror_upstream:
+    runs-on: ubuntu-latest
+    steps:
+      - name: test
+        shell: bash
+        run: |
+          env
+          echo $PWD
+          echo ${{ toJSON(github) }}
+          git remote add mirror https://github.com/Axway/Cloud-Automation.git
+          git branch 
